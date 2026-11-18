@@ -141,3 +141,21 @@ document.getElementById('reaction').textContent='⚡ Nice reaction! Try again!';
 </body>
 </html>
 
+
+<div class="card" id="mountain">
+<h2>🏔️ MINI MOUNTAIN CLIMB</h2>
+<p>Reach the top without running out of stamina!</p>
+
+<div style="font-size:65px" id="climber">🧗</div>
+
+<h3 id="climbStatus">Ready to climb?</h3>
+
+<p>Progress: <span id="progress">0</span>%</p>
+<progress id="bar" value="0" max="100" style="width:90%"></progress>
+
+<p>❤️ Stamina: <span id="energy">100</span></p>
+
+<button onclick="climb()">CLIMB ⬆️</button>
+<button onclick="rest()">REST 💤</button>
+<button onclick="restartClimb()">RESTART</button>
+</div>

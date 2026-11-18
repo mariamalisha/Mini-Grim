@@ -1,1 +1,143 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mini Grim Arcade</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080b0d;color:white;font-family:Arial;text-align:center}
+header{padding:25px;background:#101719;border-bottom:2px solid #39ff88}
+h1{color:#39ff88;font-size:38px}
+button,.link{background:#39ff88;color:#07100a;border:0;padding:13px 18px;border-radius:10px;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block;margin:5px}
+input{padding:13px;border-radius:9px;background:#111;color:white;border:1px solid #39ff88}
+.card{background:#141b1d;margin:14px auto;padding:20px;border:1px solid #294334;border-radius:16px;max-width:440px}
+.game{font-size:48px}
+#home{display:none}
+#message{color:#39ff88}
+</style>
+</head>
+<body>
+
+<header>
+<h1>MINI GRIM</h1>
+<p>Your personal gaming world 🎮</p>
+</header>
+
+<div id="login" class="card">
+<h2>🔐 Welcome</h2>
+<p>Enter your password</p>
+<input id="pass" type="password" placeholder="Password">
+<br>
+<button onclick="login()">ENTER</button>
+<p id="error"></p>
+</div>
+
+<div id="home">
+
+<h2>🎮 GAME ZONE</h2>
+
+<div class="card">
+<div class="game">⛳</div>
+<h2>Golf Battle</h2>
+<p>Play the official game online.</p>
+<a class="link" href="https://www.miniclip.com/games/golf-battle/" target="_blank">OPEN GOLF BATTLE</a>
+</div>
+
+<div class="card">
+<div class="game">👤</div>
+<h2>Mini Life</h2>
+<p id="life">You are 0 years old. Start your life!</p>
+<button onclick="life()">GROW UP</button>
+<button onclick="job()">GET A JOB</button>
+</div>
+
+<div class="card">
+<div class="game">⚽</div>
+<h2>Penalty Shootout</h2>
+<p id="football">Goals: 0</p>
+<button onclick="shoot()">SHOOT!</button>
+</div>
+
+<div class="card">
+<div class="game">🏀</div>
+<h2>Basketball</h2>
+<p id="basket">Score: 0</p>
+<button onclick="basket()">SHOOT!</button>
+</div>
+
+<div class="card">
+<div class="game">🏎️</div>
+<h2>Racing Challenge</h2>
+<p id="race">Ready to race?</p>
+<button onclick="race()">RACE!</button>
+</div>
+
+<div class="card">
+<div class="game">⚡</div>
+<h2>Reaction Challenge</h2>
+<p id="reaction">Tap the button!</p>
+<button onclick="react()">TAP!</button>
+</div>
+
+<h2>🎬 WATCH ZONE</h2>
+
+<div class="card">
+<h3>🎥 Films and TV</h3>
+<a class="link" href="https://www.bbc.co.uk/iplayer" target="_blank">BBC iPlayer</a>
+<a class="link" href="https://www.channel4.com" target="_blank">Channel 4</a>
+</div>
+
+<div class="card">
+<h3>🍥 Anime</h3>
+<a class="link" href="https://www.crunchyroll.com" target="_blank">Crunchyroll</a>
+</div>
+
+<div class="card">
+<h3>🐻 Cartoons</h3>
+<a class="link" href="https://www.bbc.co.uk/iplayer" target="_blank">BBC iPlayer</a>
+</div>
+
+<button onclick="location.reload()">LOG OUT</button>
+</div>
+
+<script>
+function login(){
+if(document.getElementById('pass').value==='mini grime'){
+document.getElementById('login').style.display='none';
+document.getElementById('home').style.display='block';
+}else{
+document.getElementById('error').textContent='Wrong password!';
+}
+}
+
+let age=0,money=0,goals=0,baskets=0;
+
+function life(){
+age++;
+document.getElementById('life').textContent='You are '+age+' years old. Money: £'+money;
+}
+function job(){
+money+=100;
+document.getElementById('life').textContent='You earned £100! Total: £'+money;
+}
+function shoot(){
+if(Math.random()>.4)goals++;
+document.getElementById('football').textContent='Goals: '+goals;
+}
+function basket(){
+if(Math.random()>.4)baskets++;
+document.getElementById('basket').textContent='Score: '+baskets;
+}
+function race(){
+document.getElementById('race').textContent='🏁 Race finished! Time: '+(Math.random()*10+5).toFixed(2)+' seconds';
+}
+function react(){
+document.getElementById('reaction').textContent='⚡ Nice reaction! Try again!';
+}
+</script>
+
+</body>
+</html>
+
